@@ -1,0 +1,124 @@
+#title{
+    color: red;
+    font-family: 'Bungee', cursive;
+    font-size: 50px;
+    text-align: center;
+}
+
+#list-group{
+    background-color: black;
+    margin-left: 300px;
+    padding: 20px;
+    width:350px;
+    border-width: 3px 3px 5px 5px;
+    border-radius:4% 95% 6% 95%/95% 4% 92% 5%;
+    transform: rotate(-2deg);
+    float:left;
+}
+
+.list-group-item{
+    display: inline-block;
+    background-color: black;
+    font-family: 'Bungee', cursive;
+    color: white;
+    padding: 10px;
+}
+
+.badge-primary{
+    background-color: red;
+    font-family: sans-serif;
+    font-weight: 1000;
+}
+
+#card{
+    float: right;
+    background-color: black;
+    padding: 10px;
+    margin-right: 300px;
+    width:350px;
+    border-width: 3px 3px 5px 5px;
+    border-radius:4% 95% 6% 95%/95% 4% 92% 5%;
+    transform: rotate(-2deg);
+    font-family: 'Bungee', cursive;
+    color: white;
+}
+
+h5{
+    color: white;
+    font-family: 'Bungee', cursive;
+    text-align: center;
+}
+
+img{
+    width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p{
+    color: white;
+    margin-right: 50px;
+    margin-top: 10px;
+    float:right;
+    background: black;
+    border:1px solid white;
+    box-shadow:3px 3px 0 white;
+    font-family: sans-serif;
+}
+
+.btn-primary{
+    margin-bottom: 15px;
+    width: 100%;
+    font-family: sans-serif;
+}
+
+form{
+    text-align: center;
+}
+
+#form{
+    color: red;
+    font-family: 'Bungee', cursive;
+    float:left;
+    margin-top:40px;
+    width:100%;
+
+}
+
+.form-control{
+    margin-left: 100px;
+    padding: 10px;
+    border-width: 3px 3px 5px 5px;
+    border-radius:4% 95% 6% 95%/95% 4% 92% 5%;
+    box-shadow: 12px 12px 2px 1px black;
+    transform: rotate(-2deg);
+    float:left;
+}
+
+.row{
+    width:80%;
+    margin-left:50px;
+    margin-right: auto;
+    margin-bottom:25px;
+}
+
+.button{
+   visibility: hidden;
+}
+
+input{
+    color: white;
+    margin-right: 5px;
+    transform: rotate(2deg);
+    float:right;
+    background: black;
+    border:1px solid white;
+    box-shadow:3px 3px 0 white;
+    font-family: sans-serif;
+}
+
+#sub{
+    color: white;
+    margin: 5px;
+}
