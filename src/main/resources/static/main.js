@@ -28,11 +28,11 @@ function loadList() {
 
 		/**
 		 * creation d'un evenement qui vide l'element puis qui appelle
-		 * la fonction loadLeague() pour remplir celui-ci
+		 * la fonction createLeague() pour remplir celui-ci
 		 */
 		newLoadNbMembre.addEventListener('click', function(event) {
 			document.getElementById("card").innerHTML = "";
-			loadLeague(league);
+			createLeague(league);
 		});
 
 		newLoadNom.appendChild(newLoadNbMembre);
@@ -44,13 +44,7 @@ function loadList() {
  * creation d'un nouvel element qui affiche les attributs de l'objet choisi 
  * @param {*} league
  */
-function loadLeague(league) {
-	
-//	var card = document.createElement('div');
-//	card.setAttribute('id', "card");
-//	card.setAttribute('class', "card");
-//	card.setAttribute('style', "width: 18rem;");
-//	document.getElementById("list-group").appendChild(card);
+function createLeague(league) {
 	
 	var cardTitle = document.createElement('h5');
 	cardTitle.className = "card-title";
@@ -77,6 +71,7 @@ function loadLeague(league) {
 	document.getElementById("card").appendChild(cardSearch);
 	
 	updateLeague(league);
+	deleteLeague(league);
 }
 
 /**
@@ -123,6 +118,21 @@ function updateLeague(league) {
 	form.appendChild(inputId), form.appendChild(inputName), 
 	form.appendChild(inputNbMember), form.appendChild(inputMember),
 	form.appendChild(inputUrl), form.appendChild(submit);
-
 	document.getElementById("card").appendChild(form);
+}
+
+/**
+ * permet la suppression d'un objet
+ * @param {*} League 
+ */
+function deleteLeague(league){
+ 
+	var dlt = document.createElement('a');
+	dlt.setAttribute('type', "button");
+	dlt.setAttribute('class', "material-icons");
+	dlt.setAttribute('href', "http://localhost:8080/dc/deleteLeague?id=" + league["id"])
+	dlt.setAttribute('title', "Supprimer cette ligue");
+	dlt.setAttribute('target', "_blank");
+	dlt.innerText= "delete_forever";
+	document.getElementById("card").appendChild(dlt);
 }

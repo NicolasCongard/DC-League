@@ -10,4 +10,5 @@ public interface LeagueDao {
 	public List<League> findAll();
 	public void addLeague(League League);
 	public void updateLeague(League league);
+	public void deleteLeague(League league);
 }

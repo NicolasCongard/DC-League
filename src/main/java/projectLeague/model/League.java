@@ -15,19 +15,16 @@ public class League implements Serializable {
 		super();
 	}
 
-	public League(int id, String nom, int nbMembre) {
-
-		this.id = id;
-		this.nom = nom;
-		this.nbMembre = nbMembre;
-	}
-
 	public League(int id, String nom, int nbMembre, String membres, String url) {
 		this.id = id;
 		this.nom = nom;
 		this.nbMembre = nbMembre;
 		this.membres = membres;
 		this.url = url;
+	}
+
+	public League(int id) {
+		this.id = id;
 	}
 
 	public String getMembres() {

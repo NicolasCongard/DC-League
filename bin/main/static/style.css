@@ -73,6 +73,12 @@ p{
     font-family: sans-serif;
 }
 
+.material-icons{
+    transform: rotate(2deg);
+    margin-bottom:15px;
+    color:red;
+}
+
 form{
     text-align: center;
 }

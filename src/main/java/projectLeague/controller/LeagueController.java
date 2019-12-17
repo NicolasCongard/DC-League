@@ -70,7 +70,8 @@ public class LeagueController {
 	 */
 	@GetMapping("/newLeague")
 	public List<League> createLeague(
-			@RequestParam(value = "id") int id, @RequestParam(value = "nom") String nom,
+			@RequestParam(value = "id") int id, 
+			@RequestParam(value = "nom") String nom,
 			@RequestParam(value = "nbMembre") int nbMembre,
 			@RequestParam(value = "membres", required = false) String membres,
 			@RequestParam(value = "url", required = false) String url) {
@@ -79,6 +80,17 @@ public class LeagueController {
 		return leagueDao.findAll();
 	}
 
+	/**
+	 * mis a jour d'un objet via l'url
+	 * "http://localhost:8080/dc/updateLeague?id=[]&nom=[]&nbMembre=[]&membres=[]&url=[]"
+	 * 
+	 * @param id
+	 * @param nom
+	 * @param nbMembre
+	 * @param membres
+	 * @param url
+	 * @return
+	 */
 	@GetMapping("/updateLeague")
 	public List<League> updateLeague(
 			@RequestParam(value = "id") int id, 
@@ -86,8 +98,22 @@ public class LeagueController {
 			@RequestParam(value = "nbMembre") int nbMembre,
 			@RequestParam(value = "membres") String membres,
 			@RequestParam(value = "url") String url) {
-		League newLeague = new League(id, nom, nbMembre, membres, url);
-		leagueDao.updateLeague(newLeague);
+		League uptLeague = new League(id, nom, nbMembre, membres, url);
+		leagueDao.updateLeague(uptLeague);
+		return leagueDao.findAll();
+	}
+	
+	/**
+	 * suppresion d'un objet via l'url
+	 * "http://localhost:8080/dc/deleteLeague?id=[]"
+	 * @param id
+	 * @return
+	 */
+	@GetMapping("/deleteLeague")
+	public List<League> deleteLeague(
+			@RequestParam(value = "id") int id){
+		League dltLeague = new League(id);
+		leagueDao.deleteLeague(dltLeague);
 		return leagueDao.findAll();
 	}
 

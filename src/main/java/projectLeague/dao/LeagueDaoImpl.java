@@ -50,6 +50,11 @@ public class LeagueDaoImpl implements LeagueDao {
 	public void updateLeague(League league) {
 		jdbcTemplate.update("UPDATE league set nom= ?, nbMembre = ?, membres = ?, url = ? WHERE id = ?", league.getNom(), league.getNbMembre(), league.getMembres(), league.getUrl(), league.getId());
 	}
+	
+	@Override
+	public void deleteLeague(League league) {
+		jdbcTemplate.update("DELETE FROM league WHERE id = ?", league.getId());
+	}
 
 	/**
 	 * 
