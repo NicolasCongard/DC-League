@@ -28,11 +28,11 @@ function loadList() {
 
 		/**
 		 * creation d'un evenement qui vide l'element puis qui appelle
-		 * la fonction createLeague() pour remplir celui-ci
+		 * la fonction loadLeague() pour remplir celui-ci
 		 */
 		newLoadNbMembre.addEventListener('click', function(event) {
 			document.getElementById("card").innerHTML = "";
-			createLeague(league);
+			loadLeague(league);
 		});
 
 		newLoadNom.appendChild(newLoadNbMembre);
@@ -44,7 +44,7 @@ function loadList() {
  * creation d'un nouvel element qui affiche les attributs de l'objet choisi 
  * @param {*} league
  */
-function createLeague(league) {
+function loadLeague(league) {
 	
 	var cardTitle = document.createElement('h5');
 	cardTitle.className = "card-title";
@@ -84,12 +84,12 @@ function updateLeague(league) {
 	form.setAttribute('method', "get");
 	form.setAttribute('action', "http://localhost:8080/dc/updateLeague");
 	form.setAttribute('target', "_blank");
-
+	
 	var inputId = document.createElement("input");
 	inputId.setAttribute('type', "hidden");
 	inputId.setAttribute('name', "id")
 	inputId.setAttribute('value', league["id"]);
-
+	
 	var inputName = document.createElement("input");
 	inputName.setAttribute('type', "text");
 	inputName.setAttribute('name', "nom");
@@ -115,9 +115,8 @@ function updateLeague(league) {
 	submit.setAttribute('id', "sub");
 	submit.setAttribute('value', "Modifiez");
 
-	form.appendChild(inputId), form.appendChild(inputName), 
-	form.appendChild(inputNbMember), form.appendChild(inputMember),
-	form.appendChild(inputUrl), form.appendChild(submit);
+	form.appendChild(inputId),form.appendChild(inputName),form.appendChild(inputNbMember), 
+	form.appendChild(inputMember),form.appendChild(inputUrl), form.appendChild(submit);
 	document.getElementById("card").appendChild(form);
 }
 

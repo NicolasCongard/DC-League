@@ -11,10 +11,6 @@ public class League implements Serializable {
 	private String membres;
 	private String url;
 
-	public League() {
-		super();
-	}
-
 	public League(int id, String nom, int nbMembre, String membres, String url) {
 		this.id = id;
 		this.nom = nom;
@@ -23,8 +19,19 @@ public class League implements Serializable {
 		this.url = url;
 	}
 
+	public League(String nom, int nbMembre, String membres, String url) {
+		this.nom = nom;
+		this.nbMembre = nbMembre;
+		this.membres = membres;
+		this.url = url;
+	}
+
 	public League(int id) {
 		this.id = id;
+	}
+
+	public League() {
+		super();
 	}
 
 	public String getMembres() {

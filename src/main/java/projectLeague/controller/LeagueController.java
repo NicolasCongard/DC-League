@@ -69,15 +69,13 @@ public class LeagueController {
 	 * @return
 	 */
 	@GetMapping("/newLeague")
-	public List<League> createLeague(
-			@RequestParam(value = "id") int id, 
+	public void createLeague( 
 			@RequestParam(value = "nom") String nom,
 			@RequestParam(value = "nbMembre") int nbMembre,
 			@RequestParam(value = "membres", required = false) String membres,
 			@RequestParam(value = "url", required = false) String url) {
-		League newLeague = new League(id, nom, nbMembre, membres, url);
+		League newLeague = new League(nom, nbMembre, membres, url);
 		leagueDao.addLeague(newLeague);
-		return leagueDao.findAll();
 	}
 
 	/**
@@ -89,18 +87,18 @@ public class LeagueController {
 	 * @param nbMembre
 	 * @param membres
 	 * @param url
+	 * @return 
 	 * @return
 	 */
 	@GetMapping("/updateLeague")
-	public List<League> updateLeague(
-			@RequestParam(value = "id") int id, 
+	public void updateLeague( 
+			@RequestParam(value = "id") int id,
 			@RequestParam(value = "nom") String nom,
 			@RequestParam(value = "nbMembre") int nbMembre,
 			@RequestParam(value = "membres") String membres,
 			@RequestParam(value = "url") String url) {
 		League uptLeague = new League(id, nom, nbMembre, membres, url);
 		leagueDao.updateLeague(uptLeague);
-		return leagueDao.findAll();
 	}
 	
 	/**
@@ -110,11 +108,10 @@ public class LeagueController {
 	 * @return
 	 */
 	@GetMapping("/deleteLeague")
-	public List<League> deleteLeague(
+	public void deleteLeague(
 			@RequestParam(value = "id") int id){
 		League dltLeague = new League(id);
 		leagueDao.deleteLeague(dltLeague);
-		return leagueDao.findAll();
 	}
 
 }
