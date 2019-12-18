@@ -46,7 +46,8 @@ public class LeagueController {
 	}
 
 	/**
-	 * affiche la liste de tout les objets existants
+	 * affiche la liste de tout les objets existants via l'url
+	 * "http://localhost:8080/dc/leagues"
 	 * 
 	 * @return
 	 */
