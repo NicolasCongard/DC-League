@@ -37,14 +37,14 @@ Affichage d'une ligue précise selon son id.
 Affichage de la totalité des ligues.
 * **/dc/newLeague**
 
-Création d'une ligue en précisant le "nom","nbMembre","members" et "url". 
+Création d'une ligue en précisant "nom", "nbMembre", "members" et "url". 
 
 *Note : pas besoin d'indiquer l'id, la valeur est auto-incrémentée*
 
 *Note 2 : les deux derniers arguments sont optionnels* 
 * **/dc/updateLeague**
 
-Modification d'une ligue en précisant le "nom","nbMembre","members" et "url".
+Modification d'une ligue en précisant "id", "nom", "nbMembre", "members" et "url".
 * **/dc/deleteLeague**
 
 Supression d'une ligue précise selon son id.

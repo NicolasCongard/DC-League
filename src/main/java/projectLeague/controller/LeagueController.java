@@ -58,11 +58,10 @@ public class LeagueController {
 
 	/**
 	 * creation d'un nouvel objet via l'url
-	 * "http://localhost:8080/dc/newLeague?id=[]&nom=[]&nbMembre=[]" ou
+	 * "http://localhost:8080/dc/newLeague?nom=[]&nbMembre=[]" ou
 	 * "http://localhost:8080/dc/newLeague?id=[]&nom=[]&nbMembre=[]&membres=[]&url=[]"
 	 * ajout dans la liste
 	 * 
-	 * @param id
 	 * @param nom
 	 * @param nbMembre
 	 * @param membres
@@ -80,7 +79,7 @@ public class LeagueController {
 	}
 
 	/**
-	 * mis a jour d'un objet via l'url
+	 * mise a jour d'un objet via l'url
 	 * "http://localhost:8080/dc/updateLeague?id=[]&nom=[]&nbMembre=[]&membres=[]&url=[]"
 	 * 
 	 * @param id
