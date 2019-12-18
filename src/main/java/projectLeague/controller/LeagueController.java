@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -66,14 +67,15 @@ public class LeagueController {
 	 * @param nbMembre
 	 * @param membres
 	 * @param url
+	 * @return 
 	 * @return
 	 */
-	@GetMapping("/newLeague")
+	@PostMapping("/newLeague")
 	public void createLeague( 
 			@RequestParam(value = "nom") String nom,
 			@RequestParam(value = "nbMembre") int nbMembre,
-			@RequestParam(value = "membres", required = false) String membres,
-			@RequestParam(value = "url", required = false) String url) {
+			@RequestParam(value = "membres") String membres,
+			@RequestParam(value = "url") String url) {
 		League newLeague = new League(nom, nbMembre, membres, url);
 		leagueDao.addLeague(newLeague);
 	}
@@ -87,10 +89,9 @@ public class LeagueController {
 	 * @param nbMembre
 	 * @param membres
 	 * @param url
-	 * @return 
-	 * @return
+	 *
 	 */
-	@GetMapping("/updateLeague")
+	@PostMapping("/updateLeague")
 	public void updateLeague( 
 			@RequestParam(value = "id") int id,
 			@RequestParam(value = "nom") String nom,
@@ -107,7 +108,7 @@ public class LeagueController {
 	 * @param id
 	 * @return
 	 */
-	@GetMapping("/deleteLeague")
+	@PostMapping("/deleteLeague")
 	public void deleteLeague(
 			@RequestParam(value = "id") int id){
 		League dltLeague = new League(id);

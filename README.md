@@ -11,14 +11,11 @@ Le site qui référence les ligues présentes dans l'univers DC Comics !
  L'utilisateur peut voir le nombre de membres et leur noms pour chacune d'entre elles ainsi qu'un visuel qui les accompagne.
  A chaque instant il est possible d'ajouter soi-même une ligue en précisant son nom et son nombre de membres obligatoirement et les noms des
  membres ainsi que l'url pour l'image de manière facultative.
- Une fois la ligue selectionnée, une seconde option s'ouvre à l'utilisateur : la possibilité de modifier son contenu (il est préférable de séparer
- les noms des membres par une virgule pour un meilleur affichage ensuite).
+ Une fois la ligue selectionnée, une seconde option s'ouvre à l'utilisateur : la possibilité de modifier son contenu en cliquant sur l'icone
+ "crayon" (il est préférable de séparer les noms des membres par une virgule pour un meilleur affichage ensuite).
  Si l'utilisateur ne veut plus qu'une certaine ligue soit référencée, il peut simplement la supprimer de la base de données via l'icone "poubelle".
  
  Les informations complètes d'une ligue sont disponibles en format JSON en cliquant sur le bouton "informations".
- 
- A noter qu'il est nécessaire d'actualiser la page après la création, la mise à jour ou la suppression d'un ligue pour visualiser le résultat de 
- l'opération.
  
 ## Diagramme
 
@@ -40,8 +37,6 @@ Affichage de la totalité des ligues.
 Création d'une ligue en précisant "nom", "nbMembre", "members" et "url". 
 
 *Note : pas besoin d'indiquer l'id, la valeur est auto-incrémentée*
-
-*Note 2 : les deux derniers arguments sont optionnels* 
 * **/dc/updateLeague**
 
 Modification d'une ligue en précisant "id", "nom", "nbMembre", "members" et "url".
@@ -49,7 +44,7 @@ Modification d'une ligue en précisant "id", "nom", "nbMembre", "members" et "ur
 
 Supression d'une ligue précise selon son id.
 
-## Exemple
+## Exemples
 
 ```
 http://localhost:8080/dc/leagues
@@ -61,7 +56,7 @@ http://localhost:8080/dc/leagues
         "id": 1,
         "nom": "Justice League",
         "nbMembre": 6,
-        "membres": "Superman,Batman,WonderWoman, Flash, Green Lantern,Aquaman",
+        "membres": "Superman,Batman,WonderWoman,Flash,Green Lantern,Aquaman",
         "url": "https://media.melty.fr/article-2804634-head/justice-league-dc-comics-warner-bros-green.jpg"
     },
     {
@@ -94,10 +89,26 @@ http://localhost:8080/dc/leagues
     }
 ]
 ```
- 
+
+---
+
+```
+http://localhost:8080/dc/newLeague?nom=Syndicat Du Crime&nbMembre=6&membres=Ultraman,SuperWoman,Owlman,Power Ring,Johnny Quick,Barracuda&url=https://www.actuabd.com/local/cache-vignettes/L400xH299/foreverevil01-9c9ef.jpg?1554016629
+```
+
+```
+{
+    "id": 35,
+    "nom": "Syndicat Du Crime",
+    "nbMembre": 6,
+    "membres": "Ultraman,SuperWoman,Owlman,Power Ring,Johnny Quick,Barracuda",
+    "url": "https://www.actuabd.com/local/cache-vignettes/L400xH299/foreverevil01-9c9ef.jpg?1554016629"
+}
+```
+
 ## Ecran principal
 
-![](https://nsa40.casimages.com/img/2019/12/18/191218013519134185.gif) 
+![](https://nsa40.casimages.com/img/2019/12/18/191218074500627716.gif) 
 
 ------
 Bonne visite !
