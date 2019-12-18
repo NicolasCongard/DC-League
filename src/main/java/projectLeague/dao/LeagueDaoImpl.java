@@ -23,7 +23,7 @@ public class LeagueDaoImpl implements LeagueDao {
 	private JdbcTemplate jdbcTemplate;
 
 	/**
-	 * methode qui recherche un objet selon son id
+	 * methode qui recherche une ligue selon son id
 	 */
 	@Override
 	public List<League> findById(int id) {
@@ -31,7 +31,7 @@ public class LeagueDaoImpl implements LeagueDao {
 	}
 	
 	/**
-	 * methode qui affiche tout les objets de la liste
+	 * methode qui affiche toutes les ligues de la table sous forme de liste
 	 */
 	@Override
 	public List<League> findAll() {
@@ -39,18 +39,24 @@ public class LeagueDaoImpl implements LeagueDao {
 	}
 
 	/**
-	 * methode qui ajoute un objet dans la liste
+	 * methode qui ajoute une ligue dans la table
 	 */
 	@Override
 	public void addLeague(League league) {
 		jdbcTemplate.update("INSERT INTO league (id, nom, nbMembre, membres, url) VALUES (?, ?, ?, ?, ?)", league.getId(), league.getNom(), league.getNbMembre(), league.getMembres(), league.getUrl());
 	}
 	
+	/**
+	 * methode qui modifie une ligue dans la table
+	 */
 	@Override
 	public void updateLeague(League league) {
 		jdbcTemplate.update("UPDATE league set nom= ?, nbMembre = ?, membres = ?, url = ? WHERE id = ?", league.getNom(), league.getNbMembre(), league.getMembres(), league.getUrl(), league.getId());
 	}
 	
+	/**
+	 * methode qui supprime une ligue dans la table
+	 */
 	@Override
 	public void deleteLeague(League league) {
 		jdbcTemplate.update("DELETE FROM league WHERE id = ?", league.getId());

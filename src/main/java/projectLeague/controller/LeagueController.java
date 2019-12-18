@@ -103,7 +103,7 @@ public class LeagueController {
 	}
 	
 	/**
-	 * suppresion d'un objet via l'url
+	 * suppression d'un objet via l'url
 	 * "http://localhost:8080/dc/deleteLeague?id=[]"
 	 * @param id
 	 * @return
